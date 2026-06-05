@@ -1,0 +1,29 @@
+frontend/node_modules/
+
+# Vite build output — generated files
+frontend/dist/
+
+# Capacitor Android build files
+frontend/android/
+
+# Local environment variables
+frontend/.env
+frontend/.env.local
+
+
+
+
+# Python virtual environment
+backend/venv/
+
+# Python compiled files
+backend/__pycache__/
+backend/**/__pycache__/
+backend/*.pyc
+
+# Local environment variables
+backend/.env
+
+# Database files (we'll generate these)
+backend/*.db
+backend/*.sqlite

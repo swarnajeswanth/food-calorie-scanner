@@ -1,0 +1,5 @@
+{
+  "appId": "com.foodscanner.app",
+  "appName": "Food Calorie Scanner",
+  "webDir": "dist"
+}
