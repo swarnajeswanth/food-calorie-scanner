@@ -2,7 +2,7 @@
 
 
 from fastapi import APIRouter, Query
-from models.schemas import MealsResponse
+from models.schemas import MealHistory
 from typing import Optional
 
 router = APIRouter()
@@ -10,7 +10,7 @@ router = APIRouter()
 
 @router.get(
     "/meals",
-    response_model=MealsResponse,
+    response_model=MealHistory,
     summary="Get meal history",
     description="Returns paginated meal history for a user"
 )
@@ -29,7 +29,7 @@ async def get_meals(
   
 
   
-    return MealsResponse(
+    return MealHistory(
         meals=[],
         total_count=0
     )

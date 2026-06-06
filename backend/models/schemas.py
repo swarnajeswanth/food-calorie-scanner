@@ -27,7 +27,7 @@ class FoodItem(BaseModel):
 
 #Analyze Request and Response Models
 class AnalyzeRequest(BaseModel):
-  image_url:str = Field(...,description="Base64 encoded image ")
+  image:str = Field(...,description="Base64 encoded image ")
   user_id:Optional[str] = Field(default="anonymous",description="Optional user identifier for personalized recommendations")
 
 
