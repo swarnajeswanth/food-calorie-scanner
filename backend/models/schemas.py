@@ -21,6 +21,7 @@ class NutritionInfo(BaseModel):
 class FoodItem(BaseModel):
   name:str = Field(...,description="Dected food name",min_length=1)
   estimated_weight_grams:float= Field(...,description="Estimated weight of the food item in grams",ge=0)
+  confidence:float = Field(...,description="Confidence score for this food item (0-1)",ge=0,le=1)
   nutrition:NutritionInfo = Field(...,description="Calculated nutrition for this portion")
   usda_food_id:Optional[str] = Field(None,description="USDA Food Database ID if available")
 
@@ -35,6 +36,7 @@ class AnalyzeResponse(BaseModel):
   scan_id:str = Field(...,description="Unique identifier for this scan")
   foods:List[FoodItem] = Field(...,description="List of detected food items with their nutritional information")
   total_nutrition:NutritionInfo = Field(...,description="Average confidence score for the detected food items")
+  overall_confidence:float = Field(...,description="Average confidence score for the detected food items",ge=0,le=1)
   timestamp:datetime = Field(...,description="Timestamp of when the analysis was performed")
 
 

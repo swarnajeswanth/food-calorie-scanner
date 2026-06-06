@@ -22,6 +22,7 @@ async def analyze_food(request: AnalyzeRequest):
     "calories": 250.0,
     "protein": 10.0,
     "carbohydrates": 30.0,
+   
     "fats": 8.0,
     "fiber": 5.0,
     "sugar": 12.0
@@ -30,6 +31,7 @@ async def analyze_food(request: AnalyzeRequest):
   mock_food_item = {
     "name": "Spaghetti Bolognese",
     "estimated_weight_grams": 350.0,
+    "confidence": 0.85,
     "nutrition": mock_nutrition,
     "usda_food_id": "12345"
   }
