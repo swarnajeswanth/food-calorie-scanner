@@ -2,6 +2,12 @@ from pydantic import BaseModel,Field
 from typing import List,Optional
 from datetime import datetime
 
+
+
+# In Pydantic specifically it means REQUIRED ... = REQUIRED (no default value)
+
+
+
 class NutritionInfo(BaseModel):
   calories:float = Field(...,description="Total calories (kcal)",ge=0)
   protein:float = Field(...,description="Protein in grams",ge=0)
@@ -48,7 +54,7 @@ class FeedbackResponse(BaseModel):
     message: str
     feedback_id: str
 
-    
+
 class MealRecord(BaseModel):
   scan_id:str
   user_id:str

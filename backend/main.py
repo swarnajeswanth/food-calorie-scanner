@@ -4,6 +4,14 @@ from fastapi.middleware.cors import CORSMiddleware
 from dotenv import load_dotenv
 import os
 
+#import our rotuer
+from routes.analyze import router as analyze_router
+from routes.feedback import router as feedback_router
+from routes.meals import router as meals_router
+
+
+
+
 #load environment variables
 load_dotenv()
 
@@ -21,6 +29,12 @@ app.add_middleware(
     allow_methods=["*"],
     allow_headers=["*"],
 )
+
+
+app.include_router(analyze_router, prefix="/api", tags=["Analysis"])
+app.include_router(feedback_router, prefix="/api", tags=["Feedback"])
+app.include_router(meals_router, prefix="/api", tags=["Meals"])
+
 
 @app.get("/")
 async def root():
